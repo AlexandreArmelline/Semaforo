@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo</title>
+</head>
+<body>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+
+        section{
+            background-image: url(SemaforoYellow.png);
+            width: 100vw;
+            height: 90vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            
+        }
+
+        .red{
+            background-image: url(SemaforoRed.png);
+        }
+
+        .yellow{
+            background-image: url(SemaforoYellow.png);
+        }
+
+        .green{
+            background-image: url(SemaforoGreen.png);
+        }
+
+        button{
+            width: 150px;
+            border-radius: 20Px;
+            font-size: 30px;
+        }
+
+    </style>
+
+    <section id="semaforo">
+
+    </section>
+
+
+    <button id="botao">Troca cor</button>
+
+
+    <script>
+        var cont = 1;
+        var botao = document.getElementById('botao');
+        var semaforo = document.getElementById('semaforo');
+        
+
+  
+
+        botao.addEventListener('click', ()=>{
+            if (cont == 1){
+                semaforo.classList.add("red")
+                semaforo.classList.remove("yellow")
+                semaforo.classList.remove("green")
+            }else{
+                if (cont == 2){
+                    semaforo.classList.add("yellow")
+                    semaforo.classList.remove("red")
+                    semaforo.classList.remove("green")
+                }else
+                 {
+                    semaforo.classList.add("green")
+                    semaforo.classList.remove("yellow")
+                    semaforo.classList.remove("red")
+                }
+            }
+
+            cont ++ 
+
+            if (cont > 3){
+                cont = 1
+            }
+            
+        })
+
+        console.log(cont)
+
+   
+    </script>
+    
+</body>
+</html>
